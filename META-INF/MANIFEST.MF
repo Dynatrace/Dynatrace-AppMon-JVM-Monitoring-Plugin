@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Require-Bundle: com.dynatrace.diagnostics.sdk
+Bundle-Vendor: dynaTrace 
+Bundle-ClassPath: .
+Bundle-Version: 1.0.0
+Bundle-Name: JMX JVM Monitoring
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: com.dynatrace.diagnostics.plugins.jmx.jvmmonitor;
+ singleton:=true
+

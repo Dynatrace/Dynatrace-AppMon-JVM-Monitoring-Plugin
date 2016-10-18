@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<!-- plugin.xml file written by dynaTrace Client 5.6.0 -->
+<plugin>
+  <extension point="com.dynatrace.diagnostics.pdk.pluginconfig" id="com.dynatrace.diagnostics.plugins.jmx.jvmmonitor" name="JMX JVM Monitoring">
+    <information>
+      <category value="" />
+      <displayname value="JVM Monitoring" />
+      <description value="JVM JXM Monitoring" />
+      <supportlevel value="unsupported" />
+    </information>
+    <configuration>
+      <property key="environment" label="Environment" type="string" description="What environment does this JVM belong to?" default="default" multiline="false" />
+      <property key="serverName" label="Instance Name" type="string" description="My property description ..." default="default" multiline="false" />
+      <property key="dtServer" label="JVM Server:Port" type="string" description="Enter the server and port &lt;server&gt;:&lt;port&gt;&#xD;&#xA;&#xD;&#xA;It needs to be in this format." default="" multiline="false" />
+      <property key="jmxPassword" label="Password" type="password" description="Enter the password. If there is no password, leave this blank." default="" />
+      <property key="systemProfile" label="System Profile" type="string" description="System profile where JMX metrics will be taken from" default="" multiline="false" />
+      <property key="metrics" label="Metrics" type="string" description="List of semicolon separated metrics" default="" multiline="false" />
+      <property key="agentGroups" label="Agent Groups" type="string" description="List of semicolon separated agent groups" default="" multiline="false" />
+      <property key="mBeans" label="MBeans" type="string" description="What Mbeans do you want to monitor? 1 MBean per line." default="" multiline="true" />
+      <property key="attributes" label="Attributes" type="string" description="List the Attributes you want to monitor. 1 Attribute per line." default="default" multiline="true" />
+    </configuration>
+  </extension>
+  <extension point="com.dynatrace.diagnostics.pdk.monitor" id="com.dynatrace.diagnostics.plugins.jmx.jvmmonitor.monitor" name="JVM Monitor">
+    <plugin configid="com.dynatrace.diagnostics.plugins.jmx.jvmmonitor" class="com.dynatrace.diagnostics.plugins.jmx.JvmMonitoring" />
+  </extension>
+  <extension point="com.dynatrace.diagnostics.pdk.monitormetricgroup" id="com.dynatrace.diagnostics.plugins.jmx.jvmmonitor.metricgroup1" name="JVM Monitor Group">
+    <metricgroup monitorid="com.dynatrace.diagnostics.plugins.jmx.jvmmonitor.monitor">
+      <metric defaultrate="purepath" name="JVM DATA" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Old Collection Time" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Old Collection Count" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Heap Memory Used" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Heap Memory Max" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Heap Memory Committed" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Heap Memory Init" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="NonHeap Memory Used" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="NonHeap Memory Max" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="NonHeap Memory Committed" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="NonHeap Memory Init" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Max Heap Size" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Old Total Compacts" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Peak Thread Count" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Total Started ThreadCount" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Thread Count" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Daemon Thread Count" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Process Cpu Time" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="System Load Average" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Processing Capacity" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Process Cpu Time By NS" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Available Processors" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Young Collection Time" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Young Collection Count" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Young Total Compacts" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Young Time In GC" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Old Time In GC" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Free Swap Space Size" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Total Swap Space Size" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="JVM Uptime" unit="number" description="How long the JVM has been running (Minutes)." />
+    </metricgroup>
+  </extension>
+  <extension point="com.dynatrace.diagnostics.pdk.monitormetricgroup" id="com.dynatrace.diagnostics.plugins.jmx.jvmmonitor.metricgroup2" name="JVM Connection Group">
+    <metricgroup monitorid="com.dynatrace.diagnostics.plugins.jmx.jvmmonitor.monitor">
+      <metric defaultrate="purepath" name="JVM Connection Status" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="JVM Monitor Time" unit="number" description="My metric description ..." />
+    </metricgroup>
+  </extension>
+</plugin>
+
