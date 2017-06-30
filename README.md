@@ -4,5 +4,4 @@
 
 This plugin allows you to dynamically gather JMX metrics from MBeans.
 
-Find further information in the [dynaTrace community]
-(https://community.compuwareapm.com/community/display/DL/JVM+Monitoring+Plugin)
+Find further information in the [Dynatrace community](https://community.dynatrace.com/community/display/DL/JVM+Monitoring+Plugin)
